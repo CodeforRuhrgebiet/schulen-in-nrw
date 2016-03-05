@@ -3,7 +3,7 @@ description: "Schulen im Ruhrgebiet finden und filtern. Alle Privatschulen und Ã
 url: "http://codeforruhrgebiet.github.io/schulen-in-nrw/"
 baseurl: "" # the subpath of your site, e.g. /blog
 github:
-  url: "http://codeforruhrgebiet.github.io/schulen-in-nrw/"
+  url: "http://codeforruhrgebiet.github.io/schulen-in-nrw"
 
 # Build settings
 markdown: kramdown
