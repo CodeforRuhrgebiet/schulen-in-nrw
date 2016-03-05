@@ -12,7 +12,7 @@ permalink: /gesamtkarte/
 {% include school_map_leaflet.html %}
 
 <script>
-  $.getJSON( "/js/schools.geojson", function(data) {
+  $.getJSON( "{{ site.github.url }}/js/schools.geojson", function(data) {
     addSchoolsToMap(data);
   });
 </script>
