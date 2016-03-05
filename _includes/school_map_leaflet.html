@@ -1,5 +1,9 @@
 <script>
   var schoolMap = L.map('schoolMap', { zoomControl: false }).setView([latitude, longitude], zoomlevel);
+  schoolMap.fitBounds([
+      [50.3230, 5.8667],
+      [52.5314, 9.4614]
+  ]);
   new L.Control.Zoom({ position: 'topright' }).addTo(schoolMap);
   L.control.locate({
     position: 'topright',  // set the location of the control
