@@ -52,9 +52,12 @@ class OpenDataStorage
     @schulbetriebe = false
     parse_schulbetriebe!
 
-    @city_postcodes = {}
-    @postcode_schools = {}
-    map_schools_to_postcodes!
+    # @city_postcodes = {}
+    # @postcode_schools = {}
+    # map_schools_to_postcodes!
+
+    @schools = {}
+    set_all_schools!
   end
 
   def fetch_all_requirements!
@@ -103,12 +106,8 @@ class OpenDataStorage
     @schulbetriebe[key]
   end
 
-  def city_postcodes_by_key(key)
-    @city_postcodes[key]
-  end
-
-  def schools_by_postcode(postcode)
-    @postcode_schools[postcode]
+  def all_schools
+    @schools
   end
 
   private
@@ -158,24 +157,13 @@ class OpenDataStorage
     @schulbetriebe = schulbetriebe
   end
 
-  def map_postcodes_to_city!
-    file_entries = CSV.read([@storage_dir, 'PLZ.tab'].join('/'), { :col_sep => "\t" })
-    file_entries.each do |entry|
-      @city_postcodes["#{entry[4]}"] = [] if !@city_postcodes["#{entry[4]}"]
-      @city_postcodes["#{entry[4]}"].push("#{entry[1]}")
-    end
-  end
-
-  def map_schools_to_postcodes!
-    puts 'Mapping schools to postcodes..'.green
+  def set_all_schools!
     raw = read_file('schuldaten.xml')
     doc = Nokogiri::XML(raw)
     xml_schools = doc.search('//Schule')
     xml_schools.each do |school|
-      school_postcode = school.css('PLZ').children.text
-      @postcode_schools["#{school_postcode}"] = [] if !@postcode_schools["#{school_postcode}"]
-      @postcode_schools["#{school_postcode}"].push(school)
+      s = School.new(self, school)
+      @schools.push(s.as_feature)
     end
-    puts '=> finished mapping schools to postcodes!'
   end
 end

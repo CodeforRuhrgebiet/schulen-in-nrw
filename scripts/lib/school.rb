@@ -1,4 +1,11 @@
 class School
+  def self.save_schools!(open_data)
+    data = {type: 'FeatureCollection', features: open_data.all_schools}
+    File.open("#{@@project_root}/js/schools.geojson", 'w') { |file| file.print data.to_json }
+    puts "=> finished fetching schools for #{@name}!"
+  end
+
+  # Instance Methods
   def initialize(open_data, doc)
     @open_data = open_data
     @doc = doc
