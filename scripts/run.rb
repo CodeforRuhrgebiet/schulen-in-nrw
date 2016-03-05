@@ -18,7 +18,6 @@ open_data = OpenDataStorage.new
 
 # uncomment the following line to update the open data files
 #open_data.fetch_all_requirements!
-open_data.process_data!
 School.save_schools!(open_data)
 
 # city_store = CityStore.new

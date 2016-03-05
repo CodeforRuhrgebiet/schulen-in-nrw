@@ -56,7 +56,7 @@ class OpenDataStorage
     # @postcode_schools = {}
     # map_schools_to_postcodes!
 
-    @schools = {}
+    @schools = []
     set_all_schools!
   end
 
@@ -161,7 +161,9 @@ class OpenDataStorage
     raw = read_file('schuldaten.xml')
     doc = Nokogiri::XML(raw)
     xml_schools = doc.search('//Schule')
-    xml_schools.each do |school|
+    count = xml_schools.size
+    xml_schools.each_with_index do |school, index|
+      puts "School #{index}/#{count}"
       s = School.new(self, school)
       @schools.push(s.as_feature)
     end
