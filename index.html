@@ -3,33 +3,20 @@ layout: default
 ---
 
 <div class="container">
-  <h1 class="h4"><mark>Schulen in NRW</mark></h1>
+  <h1 class="h4 text-xs-center"><mark>Schulen in NRW</mark></h1>
 
-  <div class="row m-t-3 m-b-3">
-  {% for city in site.cities %}
-    <div class="col-sm-6">
-      <a href="{{ site.github.url }}/stadt/{{ city.key }}/">
-        <div class="card">
-          <div class="card-block3">
-            <h2 class="card-title text-xs-center m-t-1 m-b-1">{{ city.name }}</h2>
-            <!--<p class="card-text">-->
-              <!--<progress class="progress progress-success progress-animated" value="25" max="100"-->
-                        <!--data-toggle="tooltip" data-placement="bottom" title="25% öffentliche Schulen">25% öffentliche Schulen</progress>-->
-              <!--<i>25% öffentliche Schulen</i>-->
-            <!--</p>-->
-          </div>
-          <!--<div class="card-footer text-xs-center text-muted">-->
-            <!--<a href="{{ site.github.url }}/stadt/{{ city.key }}/" class="btn btn-primary">Schulen anzeigen</a>-->
-          <!--</div>-->
-        </div>
-      </a>
+  <div class="row">
+    <div class="col-xs-12 text-xs-center">
+      <p class="lead">Hier steht ein kleiner Projekt-Teaser.</p>
     </div>
-  {% endfor %}
   </div>
 
   <div class="row m-t-3 m-b-1">
     <div class="col-xs-12 text-xs-center">
-      <a href="{{ site.github.url }}/gesamtkarte/" class="btn btn-primary-outline">Alle Städte auf einer Karte</a>
+      <a href="{{ site.github.url }}/gesamtkarte/" class="btn btn-lg btn-primary-outline">Karte anzeigen</a>
+      <br>
+      <br>
+      <small class="text-muted">(momentan ca. 4MB groß!! Wir arbeiten daran.)</small>
     </div>
   </div>
 </div>
