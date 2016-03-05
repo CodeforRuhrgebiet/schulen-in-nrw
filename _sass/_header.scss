@@ -1,0 +1,44 @@
+// leaflet map
+#headermap {
+  width: 100%;
+  height: 200px;
+
+  &.leaflet-container {
+    cursor: default !important;
+    background: rgba(#fcf8e3, 0.2) !important;
+  }
+
+  .leaflet-control-attribution {
+    opacity: 0.6;
+    transition: opacity 0.4s;
+    a { color: $gray; }
+  }
+
+  &:hover {
+    .leaflet-control-attribution {
+      opacity: 1;
+    }
+  }
+}
+
+// leader-font
+.header-text {
+  margin-left: 10px;
+  margin-top: 30px;
+
+  mark {
+    $font-color: #fff;
+    $background-color:  rgba(#FF5449, 0.9);
+    padding: 2px 0;
+    font-size: 2.5rem;
+    -webkit-box-shadow: 5px 0 0 $background-color, -5px 0 0 $background-color;
+    -moz-box-shadow: 5px 0 0 $background-color, -5px 0 0 $background-color;
+    box-shadow: 5px 0 0 $background-color, -5px 0 0 $background-color;
+    background-color: $background-color;
+    color: $font-color;
+  }
+}
+
+.navbar-branded-color {
+  background-color: #79CCC9;
+}

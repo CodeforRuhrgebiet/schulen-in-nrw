@@ -1,0 +1,28 @@
+title: "Schulradar Ruhrgebiet"
+description: "Schulen im Ruhrgebiet finden und filtern. Alle Privatschulen und öffentliche Schulen sind hier zu finden."
+url: "http://schulradar-ruhrgebiet.de"
+baseurl: "" # the subpath of your site, e.g. /blog
+
+# Build settings
+markdown: kramdown
+
+exclude:
+  - "scripts"
+  - "_cities/_city.md.erb"
+  - "_city_maps/_city_map.md.erb"
+  - "CNAME"
+  - "CONTRIBUTING.md"
+  - "Gemfile*"
+  - "mission"
+  - "README.md"
+
+sass:
+  style: :compressed
+
+collections:
+  cities:
+      output: true
+      permalink: /stadt/:path/
+  city_maps:
+    output: true
+    permalink: /stadt/:path/karte/

@@ -1,0 +1,16 @@
+---
+layout: base
+---
+
+{% include header.html %}
+
+<br>
+<br>
+
+{{ content }}
+
+{% unless page.url contains '/ueber' %}
+  {% include open_data_teaser.html %}
+{% endunless %}
+
+{% include footer.html %}

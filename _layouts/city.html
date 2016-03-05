@@ -1,0 +1,28 @@
+---
+layout: default
+---
+
+{% for city in site.cities %}
+  {% if page.key == city.key %}
+    {% assign meta = city %}
+    {% break %}
+  {% endif %}
+{% endfor %}
+
+<div class="container">
+
+  <h1 class="h4"><mark>Schulen in {{ meta.name }}</mark></h1>
+
+  <div class="row m-t-3">
+    <div class="col-xs-12">
+      <a href="{{ site.github.url }}/stadt/{{ meta.key }}/karte/" class="btn btn-primary">
+        <span class="fa fa-map-o" style="white-space: pre;">  Zur Karte</span>
+      </a>
+    </div>
+  </div>
+
+  <br>
+  <br>
+
+  <p>Hier stehen bald Zahlen. Stay tuned!</p>
+</div>
