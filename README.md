@@ -27,11 +27,11 @@
 Make sure __*ruby*__ and __*python*__ are installed.
 
 ```bash
-$ git clone git@github.com:CodeforRuhrgebiet/schulradar.git
+$ git clone git@github.com:CodeforRuhrgebiet/schulen-in-nrw.git
 ```
 
 ```bash
-$ cd schulradar
+$ cd schulen-in-nrw
 ```
 
 ```bash
