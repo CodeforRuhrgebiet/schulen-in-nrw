@@ -52,7 +52,7 @@
         {% assign homepage_active = 'active' %}
         {% endif %}
         <a class="nav-link {{ homepage_active }}" href="{{ site.github.url }}/">
-          <strong>Die Städte</strong>
+          <strong>Übersicht</strong>
         </a>
       </li>
       {% assign navigation = site.data.navigation %}
@@ -62,7 +62,7 @@
       {% assign active = 'active' %}
       {% endif %}
       <li class="nav-item {% if forloop.first %}first{% endif %} {{ active }} {% if forloop.last %}last{% endif %}">
-        <a class="nav-link" href="{{ link.url }}"><strong>{{ link.title }}</strong></a>
+        <a class="nav-link" href="{{ site.github.url }}{{ link.url }}"><strong>{{ link.title }}</strong></a>
       </li>
       {% endfor %}
     </ul>
